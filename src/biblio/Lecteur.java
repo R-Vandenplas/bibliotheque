@@ -1,6 +1,8 @@
 package biblio;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Lecteur {
     private long numLecteur;
@@ -10,4 +12,5 @@ public class Lecteur {
     private String mail;
     private String adresse;
     private String tel;
+    private List<Location>locations=new ArrayList<>();
 }
