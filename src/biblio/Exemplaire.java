@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Exemplaire extends Ouvrage{
+public class Exemplaire{
 
     private long matricule;
     private String descriptionEtat;
@@ -13,11 +13,11 @@ public class Exemplaire extends Ouvrage{
     private List<Location> locations = new ArrayList<>();
     private Ouvrage ouvrage;
 
-    public Exemplaire(String titre, byte ageMin, LocalDate dateParution, TypeOuvrage typeOuvrage, double prixLocation, String langue, String genre, long matricule, String descriptionEtat, Rayon rayon, Ouvrage ouvrage) {
-        super(titre, ageMin, dateParution, typeOuvrage, prixLocation, langue, genre);
+    public Exemplaire(long matricule, String descriptionEtat, Rayon rayon, List<Location> locations, Ouvrage ouvrage) {
         this.matricule = matricule;
         this.descriptionEtat = descriptionEtat;
         this.rayon = rayon;
+        this.locations = locations;
         this.ouvrage = ouvrage;
     }
 }
