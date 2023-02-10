@@ -75,4 +75,8 @@ public class Auteur {
         this.louvrage.add(l);
         l.getLauteurs().add(this);
     }
+    public void retraitLivre(Livre l){
+        this.louvrage.remove(l);
+        l.getLauteurs().remove(this);
+    }
 }

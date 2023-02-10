@@ -17,6 +17,10 @@ public class Main {
         e.getLloc().add(loc);
         System.out.println(a.getLouvrage());
         System.out.println(l.getLauteurs());
+        a.retraitLivre(l);
+        System.out.println(a.getLouvrage());
+        System.out.println(l.getLauteurs());
+
 
     }
 }
