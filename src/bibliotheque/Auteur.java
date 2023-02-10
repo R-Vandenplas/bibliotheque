@@ -48,6 +48,7 @@ public class Auteur {
         this.louvrage = louvrage;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -68,5 +69,10 @@ public class Auteur {
                 ", prenom='" + prenom + '\'' +
                 ", nationalite='" + nationalite + '\'' +
                 '}';
+    }
+
+    public void ajoutLivre(Livre l){
+        this.louvrage.add(l);
+        l.getLauteurs().add(this);
     }
 }
