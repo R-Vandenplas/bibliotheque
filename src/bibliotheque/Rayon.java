@@ -14,6 +14,10 @@ public class Rayon {
         this.genre = genre;
     }
 
+    public void listerExemplaires(){
+            //todo
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -33,6 +37,10 @@ public class Rayon {
                 "codeRayon='" + codeRayon + '\'' +
                 ", genre='" + genre + '\'' +
                 '}';
+    }
+    public void removeExemplaire(Exemplaire e){
+        this.getLex().remove(e);
+        e.setRayon(null);
     }
 
     public String getCodeRayon() {
@@ -58,6 +66,7 @@ public class Rayon {
     public void setLex(List<Exemplaire> lex) {
         this.lex = lex;
     }
+
 
 
 }

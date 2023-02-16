@@ -89,6 +89,15 @@ public class Lecteur {
         this.lloc = lloc;
     }
 
+    public void listerExemplairesEnLocation(){
+        //todo
+
+    }
+    public void listerExemplairesLoues(){
+        //todo
+
+    }
+
     @Override
     public String toString() {
         return "Lecteur{" +

@@ -99,6 +99,18 @@ public abstract class Ouvrage {
         this.lex = lex;
     }
 
+    public void listerExemplaires(){
+
+    }
+    public void listerExemplaires(boolean enLocation){
+
+    }
+    public abstract double amendeRetard(int njours);
+
+    public void removeExemplaire(Exemplaire e){
+        this.getLex().remove(e);
+    }
+
     @Override
     public String toString() {
         return "Ouvrage{" +
@@ -109,7 +121,6 @@ public abstract class Ouvrage {
                 ", prixLocation=" + prixLocation +
                 ", langue='" + langue + '\'' +
                 ", genre='" + genre + '\'' +
-
                 '}';
     }
 }

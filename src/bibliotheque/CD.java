@@ -9,7 +9,7 @@ public class CD extends Ouvrage{
     private String dureeTotale;
 
     public CD(String titre, int ageMin, LocalDate dateParution, double prixLocation, String langue, String genre,long code,byte nbrePlages,String dureeTotale) {
-        super(titre, ageMin, dateParution,TypeOuvrage.CD, prixLocation, langue, genre);
+        super(titre, ageMin, dateParution, TypeOuvrage.CD, prixLocation, langue, genre);
         this.code=code;
         this.nbrePlages=nbrePlages;
         this.dureeTotale=dureeTotale;
@@ -37,6 +37,11 @@ public class CD extends Ouvrage{
 
     public void setDureeTotale(String dureeTotale) {
         this.dureeTotale = dureeTotale;
+    }
+
+    public double amendeRetard(int njours){
+        //todo
+        return 0;
     }
 
     @Override

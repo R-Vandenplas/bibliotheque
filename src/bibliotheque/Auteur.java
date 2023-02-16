@@ -48,6 +48,25 @@ public class Auteur {
         this.louvrage = louvrage;
     }
 
+    public void addOuvrage(Ouvrage o){
+        this.louvrage.add(o);
+        o.getLauteurs().add(this);
+    }
+    public void removeOuvrage(Ouvrage o){
+        this.louvrage.remove(o);
+        o.getLauteurs().remove(this);
+    }
+    public void listerOuvrages(){
+        //todo
+    }
+    public void listerOuvrages(TypeOuvrage typeOuvrage,TypeLivre typeLivre){
+        //todo
+    }
+    public void listerOuvrage(String genre){
+        //todo
+    }
+
+
 
     @Override
     public boolean equals(Object o) {
@@ -69,14 +88,5 @@ public class Auteur {
                 ", prenom='" + prenom + '\'' +
                 ", nationalite='" + nationalite + '\'' +
                 '}';
-    }
-
-    public void ajoutLivre(Livre l){
-        this.louvrage.add(l);
-        l.getLauteurs().add(this);
-    }
-    public void retraitLivre(Livre l){
-        this.louvrage.remove(l);
-        l.getLauteurs().remove(this);
     }
 }
