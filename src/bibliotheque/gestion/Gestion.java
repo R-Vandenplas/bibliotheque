@@ -77,6 +77,9 @@ public class Gestion {
 
         loc = new Location(LocalDate.of(2023,2,5),LocalDate.of(2023,3,5),lec,e);
         lloc.add(loc);
+        //loc=new Location(lec,e);
+        //lloc.add(loc);
+        //System.out.println(e.lecteurActuel());
     }
 
     private void menu() {
@@ -203,22 +206,47 @@ public class Gestion {
                            System.out.println("pages ");
                            int nbrePages = sc.nextInt();
                            sc.skip("\n");
-                           TypeLivre tl= TypeLivre.ROMAN; //TODO lire le type de livre
+                           TypeLivre tl= choixTypeLivre();
                            String resume = "résumé du livre"; //TODO lire le résumé
                            o=new Livre(titre,ageMin,dp,ploc,langue,genre,isbn,nbrePages,tl,resume);
                            ;break;
-                case 2 :     //TODO gérer création DVD
-
+                case 2 :
+                            System.out.println("code");
+                            long code = sc.nextLong();
+                            sc.skip("\n");
+                            System.out.println("nombre de plage");
+                            byte nbrePlage = sc.nextByte();
+                            sc.skip("\n");
+                            System.out.println("duree totale");
+                            String duree = sc.nextLine();
+                            o=new CD(titre,ageMin,dp,ploc,langue,genre,code,nbrePlage,duree);
                             ;break;
-                case 3 :   //TODO gérer création CD
-
+                case 3 :
+                            System.out.println("code");
+                            long code = sc.nextLong();
+                            sc.skip("\n");
+                            //TODO finir new DVD
                              ;break;
             }
            louv.add(o);
         System.out.println("ouvrage créé");
     }
+    private TypeLivre choixTypeLivre(){
+        TypeLivre[] tl=TypeLivre.values();
+        for(int i =0;i<tl.length;i++){
+            System.out.println((i+1)+"."+tl[i]);
+        }
 
-       private void gestAuteurs() {
+        int choix;
+        do {
+            System.out.println("choix :");
+            choix = sc.nextInt();
+            sc.skip("\n");
+        } while(choix <1 || choix > tl.length);
+        return tl[choix-1];
+    }
+
+    private void gestAuteurs() {
         System.out.println("nom ");
         String nom=sc.nextLine();
         System.out.println("prénom ");
@@ -232,6 +260,7 @@ public class Gestion {
 
     public static void main(String[] args) {
         Gestion g = new Gestion();
+
         g.populate();
         g.menu();
     }

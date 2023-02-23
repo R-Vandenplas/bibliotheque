@@ -90,16 +90,29 @@ public class Exemplaire {
     }
 
     public void modifierEtat(String etat){
-        //TODO modifier etat exemplaire
+        setDescriptionEtat(etat);
     }
 
     public Lecteur lecteurActuel(){
-        //TODO lecteur actuel exemplaire
-        return null;
+        Lecteur l;
+        if(lloc.get(lloc.size()-1).getDateRestitution() == null){
+            l=lloc.get(lloc.size()-1).getLoueur();
+        }
+        else
+        {
+            l=null;
+        }
+
+        return l;
     }
     public List<Lecteur> lecteurs(){
-        //lecteurs exemplaire
-        return null;
+        List<Lecteur> lecteurs =new ArrayList<>();
+        for(int i=0;i<lloc.size();i++){
+            if(!lecteurs.contains(lloc.get(i).getLoueur())){
+                lecteurs.add(lloc.get(i).getLoueur());
+            }
+        }
+        return lecteurs;
     }
 
     public void envoiMailLecteurActuel(Mail mail){
