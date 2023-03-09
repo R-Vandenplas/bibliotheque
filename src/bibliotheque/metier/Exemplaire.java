@@ -115,6 +115,7 @@ public class Exemplaire {
     public void envoiMailLecteurActuel(Mail mail){
         if(lecteurActuel()!=null) System.out.println("envoi de "+mail+ " à "+lecteurActuel().getMail());
         else System.out.println("aucune location en cours");
+
     }
     public void envoiMailLecteurs(Mail mail){
         List<Lecteur>ll=lecteurs();

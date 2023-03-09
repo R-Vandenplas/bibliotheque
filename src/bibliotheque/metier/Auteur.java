@@ -3,7 +3,8 @@ package bibliotheque.metier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import static bibliotheque.metier.TypeOuvrage.*;
+
+import static bibliotheque.metier.TypeOuvrage.LIVRE;
 
 
 public class Auteur {
